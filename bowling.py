@@ -53,7 +53,7 @@ class Bowlingsimulation:
             else:
                 player.totalscore[roundnumber] += player.totalscore[roundnumber-1] + sum(player.frame_score)
                 
-            
+                
             player.score[roundnumber] = self.spare_and_strike(player.frame_score, throws)            
             
             
@@ -116,7 +116,6 @@ class Bowlingsimulation:
         elif(throws == 2 and sum(temp_points) == 10):
             return [temp_points[0], "/"]
         
-        
         if(temp_points[0] == 0):
             temp_points[0] = "-"
         if(temp_points[1] == 0):
@@ -156,8 +155,6 @@ class Bowlingsimulation:
             users_axis[i] = plt.axes([0.05, y, 0.1, 0.001]) 
             users_axis[i].set_title(player.name)
             users_axis[i].axis('off')
-            #axis[i].axes.get_xaxis().set_visible(False)
-            #axis[i].axes.get_yaxis().set_visible(False)
             
             total_axis[i] = plt.axes([0.80, y+0.017, 1, 1])
             total_axis[i].text(0,0, player.totalscore[-1], fontweight='bold')
@@ -180,12 +177,7 @@ class Bowlingsimulation:
                 axis[j].text(0.17, 0.05, value)
                 axis[j].axis('off')
             
-            y = y - 0.15
-            #axis_name = plt.axes([0.05])
-            #axis[i] = [][]
-            #self.ax1 = plt.axes([[0.07, 0.65, 0.41, 0.32]])
-            
-            
+            y = y - 0.15               
     
     
     
@@ -194,7 +186,7 @@ class Bowlingplayer:
     In this bowlingplayer object a bowlingplayer is made based on experiencelevel
     Used to make the player throw bowlingsballs and controll score of each player
     
-    input: experience of player 
+    input: experience of player and name
     """
     def __init__(self, level, name):
         self.level = level
@@ -231,14 +223,17 @@ class Bowlingplayer:
 if __name__ == "__main__":
     
     """
+    In this program a line of bowling is played
+    It's possible to create a player with certain experience
+    
     Levels: New, Great, Advance, Expert
     """
     
     # Players
-    stian = Bowlingplayer("New", "Stian")
-    julie = Bowlingplayer("Advance", "Julie")
-    lars = Bowlingplayer("Expert", "Lars")
-    marte = Bowlingplayer("Expert", "Marte")
+    stian = Bowlingplayer("New", name="Stian")
+    julie = Bowlingplayer("Advance", name="Julie")
+    lars = Bowlingplayer("Expert", name="Lars")
+    marte = Bowlingplayer("Expert", name="Marte")
     
     
     # Simualtion
