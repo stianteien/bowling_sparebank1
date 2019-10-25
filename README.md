@@ -1,4 +1,4 @@
-# bowling_sparebank1
+# bowling_sparebank1 Stian Teien
 Summer internship oppgave fra sparebank1  
 Her ligger python-fil med oppgave + et bilde av et scoreboard :)  
   
